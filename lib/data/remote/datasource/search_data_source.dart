@@ -3,8 +3,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../model/user_list.dart';
 
-final searchDataSourceProvider =
-    Provider((ref) => SearchDataSourceImpl(ref.read(githubDioProvider)));
+final searchDataSourceProvider = Provider<SearchDataSource>(
+    (ref) => SearchDataSourceImpl(ref.read(githubDioProvider)));
 
 abstract class SearchDataSource {
   Future<UserList> userList(String searchWord, int page);

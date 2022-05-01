@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_github_client/data/remote/secrets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final githubDioProvider = Provider((_) => GithubDio());
+final githubDioProvider = Provider<GithubDio>((_) => GithubDio());
 
 class GithubDio with DioMixin implements Dio {
   GithubDio() {
