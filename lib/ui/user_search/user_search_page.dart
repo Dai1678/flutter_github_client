@@ -61,8 +61,7 @@ class UserSearchPage extends HookConsumerWidget {
                               ),
                               title: Text(userList[index].userName),
                               onTap: () {
-                                // TODO
-                                print("onTap");
+                                // TODO navigate UserRepositoryPage
                               },
                             );
                           })
