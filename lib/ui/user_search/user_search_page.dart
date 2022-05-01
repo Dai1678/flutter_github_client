@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_github_client/ui/user_search/user_search_view_model.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -9,6 +10,8 @@ class UserSearchPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final _userNameTextEditingController =
         useTextEditingController.fromValue(TextEditingValue.empty);
+    final state = ref.watch(userSearchViewModelProvider);
+    final viewModel = ref.watch(userSearchViewModelProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(
@@ -35,26 +38,38 @@ class UserSearchPage extends HookConsumerWidget {
                 ElevatedButton(
                     onPressed: () {
                       final userName = _userNameTextEditingController.text;
-                      print(userName);
+                      viewModel.searchByUserName(userName);
                     },
                     child: const Text("検索"))
               ],
             ),
           ),
           Expanded(
-            child: ListView(
-              children: [
-                for (int i = 0; i < 30; i++)
-                  ListTile(
-                    leading: const Icon(Icons.supervised_user_circle_rounded),
-                    title: const Text("ユーザー"),
-                    onTap: () {
-                      print("click");
-                    },
-                  ),
-              ],
-            ),
-          )
+            child: state.when(
+                data: (userList) {
+                  return ListView.builder(
+                      itemCount: userList.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          leading:
+                              const Icon(Icons.supervised_user_circle_rounded),
+                          title: Text(userList[index].userName),
+                          onTap: () {
+                            // TODO
+                            print("onTap");
+                          },
+                        );
+                      });
+                },
+                error: (e, message) => Text(e.toString()),
+                loading: () {
+                  return const Scaffold(
+                      body: SafeArea(
+                          child: Center(
+                    child: CircularProgressIndicator(),
+                  )));
+                }),
+          ),
         ],
       ),
     );
