@@ -7,7 +7,7 @@ part 'user_list.g.dart';
 @freezed
 class UserList with _$UserList {
   factory UserList({
-    required int totalCount,
+    @JsonKey(name: "total_count") required int totalCount,
     required List<User> items,
   }) = _UserList;
 

@@ -7,7 +7,7 @@ part of 'user_list.dart';
 // **************************************************************************
 
 _$_UserList _$$_UserListFromJson(Map<String, dynamic> json) => _$_UserList(
-      totalCount: json['totalCount'] as int,
+      totalCount: json['total_count'] as int,
       items: (json['items'] as List<dynamic>)
           .map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -15,6 +15,6 @@ _$_UserList _$$_UserListFromJson(Map<String, dynamic> json) => _$_UserList(
 
 Map<String, dynamic> _$$_UserListToJson(_$_UserList instance) =>
     <String, dynamic>{
-      'totalCount': instance.totalCount,
+      'total_count': instance.totalCount,
       'items': instance.items,
     };

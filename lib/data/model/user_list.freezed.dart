@@ -20,6 +20,7 @@ UserList _$UserListFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserList {
+  @JsonKey(name: "total_count")
   int get totalCount => throw _privateConstructorUsedError;
   List<User> get items => throw _privateConstructorUsedError;
 
@@ -33,7 +34,7 @@ mixin _$UserList {
 abstract class $UserListCopyWith<$Res> {
   factory $UserListCopyWith(UserList value, $Res Function(UserList) then) =
       _$UserListCopyWithImpl<$Res>;
-  $Res call({int totalCount, List<User> items});
+  $Res call({@JsonKey(name: "total_count") int totalCount, List<User> items});
 }
 
 /// @nodoc
@@ -67,7 +68,7 @@ abstract class _$UserListCopyWith<$Res> implements $UserListCopyWith<$Res> {
   factory _$UserListCopyWith(_UserList value, $Res Function(_UserList) then) =
       __$UserListCopyWithImpl<$Res>;
   @override
-  $Res call({int totalCount, List<User> items});
+  $Res call({@JsonKey(name: "total_count") int totalCount, List<User> items});
 }
 
 /// @nodoc
@@ -100,13 +101,16 @@ class __$UserListCopyWithImpl<$Res> extends _$UserListCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_UserList implements _UserList {
-  _$_UserList({required this.totalCount, required final List<User> items})
+  _$_UserList(
+      {@JsonKey(name: "total_count") required this.totalCount,
+      required final List<User> items})
       : _items = items;
 
   factory _$_UserList.fromJson(Map<String, dynamic> json) =>
       _$$_UserListFromJson(json);
 
   @override
+  @JsonKey(name: "total_count")
   final int totalCount;
   final List<User> _items;
   @override
@@ -150,12 +154,13 @@ class _$_UserList implements _UserList {
 
 abstract class _UserList implements UserList {
   factory _UserList(
-      {required final int totalCount,
+      {@JsonKey(name: "total_count") required final int totalCount,
       required final List<User> items}) = _$_UserList;
 
   factory _UserList.fromJson(Map<String, dynamic> json) = _$_UserList.fromJson;
 
   @override
+  @JsonKey(name: "total_count")
   int get totalCount => throw _privateConstructorUsedError;
   @override
   List<User> get items => throw _privateConstructorUsedError;

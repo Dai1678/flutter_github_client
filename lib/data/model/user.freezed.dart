@@ -23,6 +23,7 @@ mixin _$User {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "login")
   String get userName => throw _privateConstructorUsedError;
+  @JsonKey(name: "avatar_url")
   String get avatarUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +36,9 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {int id, @JsonKey(name: "login") String userName, String avatarUrl});
+      {int id,
+      @JsonKey(name: "login") String userName,
+      @JsonKey(name: "avatar_url") String avatarUrl});
 }
 
 /// @nodoc
@@ -75,7 +78,9 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id, @JsonKey(name: "login") String userName, String avatarUrl});
+      {int id,
+      @JsonKey(name: "login") String userName,
+      @JsonKey(name: "avatar_url") String avatarUrl});
 }
 
 /// @nodoc
@@ -116,7 +121,7 @@ class _$_User implements _User {
   _$_User(
       {required this.id,
       @JsonKey(name: "login") required this.userName,
-      required this.avatarUrl});
+      @JsonKey(name: "avatar_url") required this.avatarUrl});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
@@ -126,6 +131,7 @@ class _$_User implements _User {
   @JsonKey(name: "login")
   final String userName;
   @override
+  @JsonKey(name: "avatar_url")
   final String avatarUrl;
 
   @override
@@ -166,7 +172,7 @@ abstract class _User implements User {
   factory _User(
       {required final int id,
       @JsonKey(name: "login") required final String userName,
-      required final String avatarUrl}) = _$_User;
+      @JsonKey(name: "avatar_url") required final String avatarUrl}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
@@ -176,6 +182,7 @@ abstract class _User implements User {
   @JsonKey(name: "login")
   String get userName => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: "avatar_url")
   String get avatarUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
