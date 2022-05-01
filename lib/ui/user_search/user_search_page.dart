@@ -52,8 +52,13 @@ class UserSearchPage extends HookConsumerWidget {
                           itemCount: userList.length,
                           itemBuilder: (context, index) {
                             return ListTile(
-                              leading: const Icon(
-                                  Icons.supervised_user_circle_rounded),
+                              leading: ClipOval(
+                                child: Image.network(
+                                  userList[index].avatarUrl,
+                                  width: 48.0,
+                                  height: 48.0,
+                                ),
+                              ),
                               title: Text(userList[index].userName),
                               onTap: () {
                                 // TODO
