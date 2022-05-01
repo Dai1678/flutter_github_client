@@ -47,19 +47,23 @@ class UserSearchPage extends HookConsumerWidget {
           Expanded(
             child: state.when(
                 data: (userList) {
-                  return ListView.builder(
-                      itemCount: userList.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading:
-                              const Icon(Icons.supervised_user_circle_rounded),
-                          title: Text(userList[index].userName),
-                          onTap: () {
-                            // TODO
-                            print("onTap");
-                          },
+                  return userList.isNotEmpty
+                      ? ListView.builder(
+                          itemCount: userList.length,
+                          itemBuilder: (context, index) {
+                            return ListTile(
+                              leading: const Icon(
+                                  Icons.supervised_user_circle_rounded),
+                              title: Text(userList[index].userName),
+                              onTap: () {
+                                // TODO
+                                print("onTap");
+                              },
+                            );
+                          })
+                      : const Center(
+                          child: Text("検索結果なし"),
                         );
-                      });
                 },
                 error: (e, message) => Text(e.toString()),
                 loading: () {
