@@ -29,7 +29,6 @@ class UserRepositoryPage extends HookConsumerWidget {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
                   children: [
                     ListTile(
                       leading: ClipOval(
@@ -55,25 +54,32 @@ class UserRepositoryPage extends HookConsumerWidget {
               ),
               Expanded(
                 child: ListView.builder(
+                  padding: const EdgeInsets.all(8.0),
                   itemCount: data.repositoryList.length,
                   itemBuilder: (context, index) {
                     return Card(
                       child: Column(
-                        mainAxisSize: MainAxisSize.min,
                         children: [
                           ListTile(
                             title: Text(data.repositoryList[index].name),
                             subtitle: Text(
                                 data.repositoryList[index].description ?? ""),
+                            isThreeLine:
+                                data.repositoryList[index].description != null,
                           ),
-                          Row(
-                            children: [
-                              Text(data.repositoryList[index].language ?? ""),
-                              const SizedBox(width: 16.0),
-                              const Icon(Icons.star_border),
-                              Text(
-                                  "${data.repositoryList[index].stargazersCount}"),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                right: 16.0, bottom: 16.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(data.repositoryList[index].language ?? ""),
+                                const SizedBox(width: 16.0),
+                                const Icon(Icons.star_border),
+                                Text(
+                                    "${data.repositoryList[index].stargazersCount}"),
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -84,19 +90,10 @@ class UserRepositoryPage extends HookConsumerWidget {
             ],
           );
         },
-        error: (e, message) {
-          print(e.toString());
-          Text(e.toString());
-        },
-        loading: () {
-          return const Scaffold(
-            body: SafeArea(
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            ),
-          );
-        },
+        error: (e, message) => Text(e.toString()),
+        loading: () => const Center(
+          child: CircularProgressIndicator(),
+        ),
       ),
     );
   }
