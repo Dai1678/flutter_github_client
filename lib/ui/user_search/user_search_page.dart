@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_github_client/ui/user_repository/user_repository_page.dart';
 import 'package:flutter_github_client/ui/user_search/user_search_view_model.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class UserSearchPage extends HookConsumerWidget {
@@ -60,9 +62,9 @@ class UserSearchPage extends HookConsumerWidget {
                                 ),
                               ),
                               title: Text(userList[index].userName),
-                              onTap: () {
-                                // TODO navigate UserRepositoryPage
-                              },
+                              onTap: () => Get.to(
+                                UserRepositoryPage(userList[index].userName),
+                              ),
                             );
                           })
                       : const Center(
