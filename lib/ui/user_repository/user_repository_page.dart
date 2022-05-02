@@ -4,7 +4,9 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class UserRepositoryPage extends HookConsumerWidget {
-  const UserRepositoryPage({Key? key}) : super(key: key);
+  const UserRepositoryPage(this._userName, {Key? key}) : super(key: key);
+
+  final String _userName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -12,7 +14,7 @@ class UserRepositoryPage extends HookConsumerWidget {
     final viewModel = ref.watch(userRepositoryViewModelProvider.notifier);
 
     useEffect(() {
-      viewModel.init("Dai1678");
+      viewModel.init(_userName);
       return;
     }, const []);
 
@@ -82,7 +84,10 @@ class UserRepositoryPage extends HookConsumerWidget {
             ],
           );
         },
-        error: (e, message) => Text(e.toString()),
+        error: (e, message) {
+          print(e.toString());
+          Text(e.toString());
+        },
         loading: () {
           return const Scaffold(
             body: SafeArea(

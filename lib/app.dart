@@ -13,9 +13,6 @@ class App extends HookConsumerWidget {
       title: "Github Client",
       darkTheme: ThemeData.dark(),
       home: const UserSearchPage(),
-      // TODO GetXによるRoute管理を生かすならgetPages等を使うと良さそう
-      // TODO go_routerがFlutter公式パッケージになっているので置き換えても良さそう
-      routes: {"/user_search": (context) => const UserSearchPage()},
     );
   }
 }
