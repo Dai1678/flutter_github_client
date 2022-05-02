@@ -2,15 +2,38 @@
 
 Github Client for Flutter.
 
-## Getting Started
+## Development
+### Feature
+- Search user by Github username.
+- Show user information and user's repository list.
 
-This project is a starting point for a Flutter application.
+|UserSearch|UserRepository|
+|---|---|
+|<img src="https://user-images.githubusercontent.com/19250035/166251806-e2fb4647-e6f3-4385-9d16-4767cf4d0c2a.png" width=300>|<img src="https://user-images.githubusercontent.com/19250035/166251823-a4e7ce43-f16d-4a3f-8eb2-4a2e2c9af0e0.png" width=300>|
 
-A few resources to get you started if this is your first Flutter project:
+### Getting Started
+Required latest Android Studio. (Not tested with Visual Studio Code)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+This project build to need Github personal access token.
+You can create it from [this page](https://github.com/settings/tokens) and select scopes **repo** and **user**.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Architecture
+3Layer Clean Architecture.
+- presentation
+- domain
+- data
+
+## Tech Stacks
+### Managed State
+- [riverpod](https://pub.dev/packages/riverpod)
+- [flutter_hooks](https://pub.dev/packages/flutter_hooks)
+
+### API
+- [dio](https://pub.dev/packages/dio)
+
+### Model
+- [freezed](https://pub.dev/packages/freezed)
+
+### Utilities
+- [get](https://pub.dev/packages/get)
+  - e.g. page route management
