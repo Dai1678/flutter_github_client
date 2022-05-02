@@ -18,10 +18,11 @@ This project build to need Github personal access token.
 You can create it from [this page](https://github.com/settings/tokens) and select scopes **repo** and **user**.
 
 ## Architecture
-3Layer Clean Architecture.
-- presentation
-- domain
-- data
+2Layer Architecture.
+- UI layer
+- Data Layer
+
+FYI: https://developer.android.com/topic/architecture#recommended-app-arch
 
 ## Tech Stacks
 ### Managed State
