@@ -1,7 +1,7 @@
 import 'package:flutter_github_client/data/remote/github_dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../model/user_search_list_body.dart';
+import '../body/user_search_list_body.dart';
 
 final searchDataSourceProvider = Provider<SearchDataSource>(
     (ref) => SearchDataSourceImpl(ref.read(githubDioProvider)));

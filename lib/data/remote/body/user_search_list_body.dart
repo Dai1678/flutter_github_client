@@ -1,4 +1,4 @@
-import 'package:flutter_github_client/data/model/user_search_body.dart';
+import 'package:flutter_github_client/data/remote/body/user_search_body.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user_search_list_body.freezed.dart';
