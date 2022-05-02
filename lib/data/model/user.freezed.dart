@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$User {
   String get userName => throw _privateConstructorUsedError;
-  String get fullName => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
   String get avatarUrl => throw _privateConstructorUsedError;
   int get followers => throw _privateConstructorUsedError;
   int get following => throw _privateConstructorUsedError;
@@ -32,7 +32,7 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res>;
   $Res call(
       {String userName,
-      String fullName,
+      String? fullName,
       String avatarUrl,
       int followers,
       int following});
@@ -62,7 +62,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatarUrl: avatarUrl == freezed
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -86,7 +86,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   $Res call(
       {String userName,
-      String fullName,
+      String? fullName,
       String avatarUrl,
       int followers,
       int following});
@@ -117,7 +117,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatarUrl: avatarUrl == freezed
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -147,7 +147,7 @@ class _$_User implements _User {
   @override
   final String userName;
   @override
-  final String fullName;
+  final String? fullName;
   @override
   final String avatarUrl;
   @override
@@ -190,7 +190,7 @@ class _$_User implements _User {
 abstract class _User implements User {
   factory _User(
       {required final String userName,
-      required final String fullName,
+      required final String? fullName,
       required final String avatarUrl,
       required final int followers,
       required final int following}) = _$_User;
@@ -198,7 +198,7 @@ abstract class _User implements User {
   @override
   String get userName => throw _privateConstructorUsedError;
   @override
-  String get fullName => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
   @override
   String get avatarUrl => throw _privateConstructorUsedError;
   @override

@@ -8,7 +8,7 @@ class UserBody with _$UserBody {
   factory UserBody({
     required int id,
     @JsonKey(name: "login") required String userNmae,
-    @JsonKey(name: "name") required String fullName,
+    @JsonKey(name: "name") required String? fullName,
     @JsonKey(name: "avatar_url") required String avatarUrl,
     required int followers,
     required int following,

@@ -38,8 +38,8 @@ class UserRepositoryPage extends HookConsumerWidget {
                           height: 48.0,
                         ),
                       ),
-                      title: Text(data.user.fullName),
-                      subtitle: Text(data.user.userName),
+                      title: Text(data.user.userName),
+                      subtitle: Text(data.user.fullName ?? ""),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,

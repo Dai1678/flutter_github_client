@@ -24,7 +24,7 @@ mixin _$UserBody {
   @JsonKey(name: "login")
   String get userNmae => throw _privateConstructorUsedError;
   @JsonKey(name: "name")
-  String get fullName => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
   @JsonKey(name: "avatar_url")
   String get avatarUrl => throw _privateConstructorUsedError;
   int get followers => throw _privateConstructorUsedError;
@@ -43,7 +43,7 @@ abstract class $UserBodyCopyWith<$Res> {
   $Res call(
       {int id,
       @JsonKey(name: "login") String userNmae,
-      @JsonKey(name: "name") String fullName,
+      @JsonKey(name: "name") String? fullName,
       @JsonKey(name: "avatar_url") String avatarUrl,
       int followers,
       int following});
@@ -78,7 +78,7 @@ class _$UserBodyCopyWithImpl<$Res> implements $UserBodyCopyWith<$Res> {
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatarUrl: avatarUrl == freezed
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -103,7 +103,7 @@ abstract class _$UserBodyCopyWith<$Res> implements $UserBodyCopyWith<$Res> {
   $Res call(
       {int id,
       @JsonKey(name: "login") String userNmae,
-      @JsonKey(name: "name") String fullName,
+      @JsonKey(name: "name") String? fullName,
       @JsonKey(name: "avatar_url") String avatarUrl,
       int followers,
       int following});
@@ -139,7 +139,7 @@ class __$UserBodyCopyWithImpl<$Res> extends _$UserBodyCopyWithImpl<$Res>
       fullName: fullName == freezed
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       avatarUrl: avatarUrl == freezed
           ? _value.avatarUrl
           : avatarUrl // ignore: cast_nullable_to_non_nullable
@@ -177,7 +177,7 @@ class _$_UserBody implements _UserBody {
   final String userNmae;
   @override
   @JsonKey(name: "name")
-  final String fullName;
+  final String? fullName;
   @override
   @JsonKey(name: "avatar_url")
   final String avatarUrl;
@@ -230,7 +230,7 @@ abstract class _UserBody implements UserBody {
   factory _UserBody(
       {required final int id,
       @JsonKey(name: "login") required final String userNmae,
-      @JsonKey(name: "name") required final String fullName,
+      @JsonKey(name: "name") required final String? fullName,
       @JsonKey(name: "avatar_url") required final String avatarUrl,
       required final int followers,
       required final int following}) = _$_UserBody;
@@ -244,7 +244,7 @@ abstract class _UserBody implements UserBody {
   String get userNmae => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "name")
-  String get fullName => throw _privateConstructorUsedError;
+  String? get fullName => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "avatar_url")
   String get avatarUrl => throw _privateConstructorUsedError;

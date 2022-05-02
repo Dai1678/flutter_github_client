@@ -9,7 +9,7 @@ part of 'user_body.dart';
 _$_UserBody _$$_UserBodyFromJson(Map<String, dynamic> json) => _$_UserBody(
       id: json['id'] as int,
       userNmae: json['login'] as String,
-      fullName: json['name'] as String,
+      fullName: json['name'] as String?,
       avatarUrl: json['avatar_url'] as String,
       followers: json['followers'] as int,
       following: json['following'] as int,
