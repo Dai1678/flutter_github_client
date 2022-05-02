@@ -21,10 +21,10 @@ UserRepositoryBody _$UserRepositoryBodyFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserRepositoryBody {
   String get name => throw _privateConstructorUsedError;
-  String get language => throw _privateConstructorUsedError;
+  String? get language => throw _privateConstructorUsedError;
   @JsonKey(name: "stargazers_count")
   int get stargazersCount => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   bool get fork => throw _privateConstructorUsedError;
   @JsonKey(name: "html_url")
   String get url => throw _privateConstructorUsedError;
@@ -42,9 +42,9 @@ abstract class $UserRepositoryBodyCopyWith<$Res> {
       _$UserRepositoryBodyCopyWithImpl<$Res>;
   $Res call(
       {String name,
-      String language,
+      String? language,
       @JsonKey(name: "stargazers_count") int stargazersCount,
-      String description,
+      String? description,
       bool fork,
       @JsonKey(name: "html_url") String url});
 }
@@ -75,7 +75,7 @@ class _$UserRepositoryBodyCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
@@ -83,7 +83,7 @@ class _$UserRepositoryBodyCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       fork: fork == freezed
           ? _value.fork
           : fork // ignore: cast_nullable_to_non_nullable
@@ -105,9 +105,9 @@ abstract class _$UserRepositoryBodyCopyWith<$Res>
   @override
   $Res call(
       {String name,
-      String language,
+      String? language,
       @JsonKey(name: "stargazers_count") int stargazersCount,
-      String description,
+      String? description,
       bool fork,
       @JsonKey(name: "html_url") String url});
 }
@@ -140,7 +140,7 @@ class __$UserRepositoryBodyCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
@@ -148,7 +148,7 @@ class __$UserRepositoryBodyCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       fork: fork == freezed
           ? _value.fork
           : fork // ignore: cast_nullable_to_non_nullable
@@ -178,12 +178,12 @@ class _$_UserRepositoryBody implements _UserRepositoryBody {
   @override
   final String name;
   @override
-  final String language;
+  final String? language;
   @override
   @JsonKey(name: "stargazers_count")
   final int stargazersCount;
   @override
-  final String description;
+  final String? description;
   @override
   final bool fork;
   @override
@@ -235,9 +235,9 @@ class _$_UserRepositoryBody implements _UserRepositoryBody {
 abstract class _UserRepositoryBody implements UserRepositoryBody {
   factory _UserRepositoryBody(
           {required final String name,
-          required final String language,
+          required final String? language,
           @JsonKey(name: "stargazers_count") required final int stargazersCount,
-          required final String description,
+          required final String? description,
           required final bool fork,
           @JsonKey(name: "html_url") required final String url}) =
       _$_UserRepositoryBody;
@@ -248,12 +248,12 @@ abstract class _UserRepositoryBody implements UserRepositoryBody {
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String get language => throw _privateConstructorUsedError;
+  String? get language => throw _privateConstructorUsedError;
   @override
   @JsonKey(name: "stargazers_count")
   int get stargazersCount => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
   bool get fork => throw _privateConstructorUsedError;
   @override

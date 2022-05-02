@@ -6,8 +6,8 @@ part 'user_repository.freezed.dart';
 class UserRepository with _$UserRepository {
   factory UserRepository(
       {required String name,
-      required String language,
+      required String? language,
       required int stargazersCount,
-      required String description,
+      required String? description,
       required String url}) = _UserRepository;
 }

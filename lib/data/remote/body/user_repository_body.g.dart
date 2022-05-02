@@ -10,9 +10,9 @@ _$_UserRepositoryBody _$$_UserRepositoryBodyFromJson(
         Map<String, dynamic> json) =>
     _$_UserRepositoryBody(
       name: json['name'] as String,
-      language: json['language'] as String,
+      language: json['language'] as String?,
       stargazersCount: json['stargazers_count'] as int,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       fork: json['fork'] as bool,
       url: json['html_url'] as String,
     );

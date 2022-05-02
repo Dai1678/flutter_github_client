@@ -61,12 +61,12 @@ class UserRepositoryPage extends HookConsumerWidget {
                         children: [
                           ListTile(
                             title: Text(data.repositoryList[index].name),
-                            subtitle:
-                                Text(data.repositoryList[index].description),
+                            subtitle: Text(
+                                data.repositoryList[index].description ?? ""),
                           ),
                           Row(
                             children: [
-                              Text(data.repositoryList[index].language),
+                              Text(data.repositoryList[index].language ?? ""),
                               const SizedBox(width: 16.0),
                               const Icon(Icons.star_border),
                               Text(

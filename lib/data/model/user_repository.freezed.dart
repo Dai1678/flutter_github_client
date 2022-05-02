@@ -17,9 +17,9 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UserRepository {
   String get name => throw _privateConstructorUsedError;
-  String get language => throw _privateConstructorUsedError;
+  String? get language => throw _privateConstructorUsedError;
   int get stargazersCount => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,9 +34,9 @@ abstract class $UserRepositoryCopyWith<$Res> {
       _$UserRepositoryCopyWithImpl<$Res>;
   $Res call(
       {String name,
-      String language,
+      String? language,
       int stargazersCount,
-      String description,
+      String? description,
       String url});
 }
 
@@ -65,7 +65,7 @@ class _$UserRepositoryCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
@@ -73,7 +73,7 @@ class _$UserRepositoryCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -91,9 +91,9 @@ abstract class _$UserRepositoryCopyWith<$Res>
   @override
   $Res call(
       {String name,
-      String language,
+      String? language,
       int stargazersCount,
-      String description,
+      String? description,
       String url});
 }
 
@@ -124,7 +124,7 @@ class __$UserRepositoryCopyWithImpl<$Res>
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       stargazersCount: stargazersCount == freezed
           ? _value.stargazersCount
           : stargazersCount // ignore: cast_nullable_to_non_nullable
@@ -132,7 +132,7 @@ class __$UserRepositoryCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
@@ -154,11 +154,11 @@ class _$_UserRepository implements _UserRepository {
   @override
   final String name;
   @override
-  final String language;
+  final String? language;
   @override
   final int stargazersCount;
   @override
-  final String description;
+  final String? description;
   @override
   final String url;
 
@@ -199,19 +199,19 @@ class _$_UserRepository implements _UserRepository {
 abstract class _UserRepository implements UserRepository {
   factory _UserRepository(
       {required final String name,
-      required final String language,
+      required final String? language,
       required final int stargazersCount,
-      required final String description,
+      required final String? description,
       required final String url}) = _$_UserRepository;
 
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String get language => throw _privateConstructorUsedError;
+  String? get language => throw _privateConstructorUsedError;
   @override
   int get stargazersCount => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
   String get url => throw _privateConstructorUsedError;
   @override

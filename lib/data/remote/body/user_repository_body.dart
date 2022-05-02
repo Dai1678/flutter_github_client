@@ -7,9 +7,9 @@ part 'user_repository_body.g.dart';
 class UserRepositoryBody with _$UserRepositoryBody {
   factory UserRepositoryBody({
     required String name,
-    required String language,
+    required String? language,
     @JsonKey(name: "stargazers_count") required int stargazersCount,
-    required String description,
+    required String? description,
     required bool fork,
     @JsonKey(name: "html_url") required String url,
   }) = _UserRepositoryBody;
