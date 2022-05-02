@@ -1,9 +1,8 @@
-import 'dart:convert';
-
 import 'package:flutter_github_client/data/remote/body/user_body.dart';
-import 'package:flutter_github_client/data/remote/body/user_repository_body.dart';
 import 'package:flutter_github_client/data/remote/github_dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../body/user_repository_body.dart';
 
 final usersDataSourceProvider = Provider<UsersDataSource>(
     (ref) => UsersDataSourceImpl(ref.read(githubDioProvider)));
@@ -35,7 +34,7 @@ class UsersDataSourceImpl implements UsersDataSource {
         "page": page,
       },
     );
-    return (jsonDecode(response.data) as List)
+    return (response.data as List)
         .map((item) => UserRepositoryBody.fromJson(item))
         .toList();
   }
