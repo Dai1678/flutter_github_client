@@ -1,19 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_list.dart';
+part of 'user_search_list_body.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserList _$$_UserListFromJson(Map<String, dynamic> json) => _$_UserList(
+_$_UserSearchListBody _$$_UserSearchListBodyFromJson(
+        Map<String, dynamic> json) =>
+    _$_UserSearchListBody(
       totalCount: json['total_count'] as int,
       items: (json['items'] as List<dynamic>)
-          .map((e) => User.fromJson(e as Map<String, dynamic>))
+          .map((e) => UserSearchBody.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_UserListToJson(_$_UserList instance) =>
+Map<String, dynamic> _$$_UserSearchListBodyToJson(
+        _$_UserSearchListBody instance) =>
     <String, dynamic>{
       'total_count': instance.totalCount,
       'items': instance.items,

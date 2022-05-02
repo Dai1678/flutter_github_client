@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user.dart';
+part of 'user_search_body.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+UserSearchBody _$UserSearchBodyFromJson(Map<String, dynamic> json) {
+  return _UserSearchBody.fromJson(json);
 }
 
 /// @nodoc
-mixin _$User {
+mixin _$UserSearchBody {
   int get id => throw _privateConstructorUsedError;
   @JsonKey(name: "login")
   String get userName => throw _privateConstructorUsedError;
@@ -28,13 +28,15 @@ mixin _$User {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $UserSearchBodyCopyWith<UserSearchBody> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
+abstract class $UserSearchBodyCopyWith<$Res> {
+  factory $UserSearchBodyCopyWith(
+          UserSearchBody value, $Res Function(UserSearchBody) then) =
+      _$UserSearchBodyCopyWithImpl<$Res>;
   $Res call(
       {int id,
       @JsonKey(name: "login") String userName,
@@ -42,12 +44,13 @@ abstract class $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$UserSearchBodyCopyWithImpl<$Res>
+    implements $UserSearchBodyCopyWith<$Res> {
+  _$UserSearchBodyCopyWithImpl(this._value, this._then);
 
-  final User _value;
+  final UserSearchBody _value;
   // ignore: unused_field
-  final $Res Function(User) _then;
+  final $Res Function(UserSearchBody) _then;
 
   @override
   $Res call({
@@ -73,9 +76,11 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-      __$UserCopyWithImpl<$Res>;
+abstract class _$UserSearchBodyCopyWith<$Res>
+    implements $UserSearchBodyCopyWith<$Res> {
+  factory _$UserSearchBodyCopyWith(
+          _UserSearchBody value, $Res Function(_UserSearchBody) then) =
+      __$UserSearchBodyCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -84,13 +89,15 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$UserCopyWith<$Res> {
-  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-      : super(_value, (v) => _then(v as _User));
+class __$UserSearchBodyCopyWithImpl<$Res>
+    extends _$UserSearchBodyCopyWithImpl<$Res>
+    implements _$UserSearchBodyCopyWith<$Res> {
+  __$UserSearchBodyCopyWithImpl(
+      _UserSearchBody _value, $Res Function(_UserSearchBody) _then)
+      : super(_value, (v) => _then(v as _UserSearchBody));
 
   @override
-  _User get _value => super._value as _User;
+  _UserSearchBody get _value => super._value as _UserSearchBody;
 
   @override
   $Res call({
@@ -98,7 +105,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? userName = freezed,
     Object? avatarUrl = freezed,
   }) {
-    return _then(_User(
+    return _then(_UserSearchBody(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -117,13 +124,14 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_User implements _User {
-  _$_User(
+class _$_UserSearchBody implements _UserSearchBody {
+  _$_UserSearchBody(
       {required this.id,
       @JsonKey(name: "login") required this.userName,
       @JsonKey(name: "avatar_url") required this.avatarUrl});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_UserSearchBody.fromJson(Map<String, dynamic> json) =>
+      _$$_UserSearchBodyFromJson(json);
 
   @override
   final int id;
@@ -136,14 +144,14 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, userName: $userName, avatarUrl: $avatarUrl)';
+    return 'UserSearchBody(id: $id, userName: $userName, avatarUrl: $avatarUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _User &&
+            other is _UserSearchBody &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.userName, userName) &&
             const DeepCollectionEquality().equals(other.avatarUrl, avatarUrl));
@@ -159,22 +167,24 @@ class _$_User implements _User {
 
   @JsonKey(ignore: true)
   @override
-  _$UserCopyWith<_User> get copyWith =>
-      __$UserCopyWithImpl<_User>(this, _$identity);
+  _$UserSearchBodyCopyWith<_UserSearchBody> get copyWith =>
+      __$UserSearchBodyCopyWithImpl<_UserSearchBody>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(this);
+    return _$$_UserSearchBodyToJson(this);
   }
 }
 
-abstract class _User implements User {
-  factory _User(
-      {required final int id,
-      @JsonKey(name: "login") required final String userName,
-      @JsonKey(name: "avatar_url") required final String avatarUrl}) = _$_User;
+abstract class _UserSearchBody implements UserSearchBody {
+  factory _UserSearchBody(
+          {required final int id,
+          @JsonKey(name: "login") required final String userName,
+          @JsonKey(name: "avatar_url") required final String avatarUrl}) =
+      _$_UserSearchBody;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _UserSearchBody.fromJson(Map<String, dynamic> json) =
+      _$_UserSearchBody.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -186,5 +196,6 @@ abstract class _User implements User {
   String get avatarUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
+  _$UserSearchBodyCopyWith<_UserSearchBody> get copyWith =>
+      throw _privateConstructorUsedError;
 }
