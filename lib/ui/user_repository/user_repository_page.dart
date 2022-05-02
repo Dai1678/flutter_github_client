@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_github_client/ui/user_repository/user_repository_view_model.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class UserRepositoryPage extends HookConsumerWidget {
   const UserRepositoryPage(this._userName, {Key? key}) : super(key: key);
@@ -58,30 +59,36 @@ class UserRepositoryPage extends HookConsumerWidget {
                   itemCount: data.repositoryList.length,
                   itemBuilder: (context, index) {
                     return Card(
-                      child: Column(
-                        children: [
-                          ListTile(
-                            title: Text(data.repositoryList[index].name),
-                            subtitle: Text(
-                                data.repositoryList[index].description ?? ""),
-                            isThreeLine:
-                                data.repositoryList[index].description != null,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                right: 16.0, bottom: 16.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                Text(data.repositoryList[index].language ?? ""),
-                                const SizedBox(width: 16.0),
-                                const Icon(Icons.star_border),
-                                Text(
-                                    "${data.repositoryList[index].stargazersCount}"),
-                              ],
+                      child: InkWell(
+                        onTap: () =>
+                            _launchUrl(context, data.repositoryList[index].url),
+                        child: Column(
+                          children: [
+                            ListTile(
+                              title: Text(data.repositoryList[index].name),
+                              subtitle: Text(
+                                  data.repositoryList[index].description ?? ""),
+                              isThreeLine:
+                                  data.repositoryList[index].description !=
+                                      null,
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  right: 16.0, bottom: 16.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Text(data.repositoryList[index].language ??
+                                      ""),
+                                  const SizedBox(width: 16.0),
+                                  const Icon(Icons.star_border),
+                                  Text(
+                                      "${data.repositoryList[index].stargazersCount}"),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
@@ -96,5 +103,14 @@ class UserRepositoryPage extends HookConsumerWidget {
         ),
       ),
     );
+  }
+
+  void _launchUrl(BuildContext context, String url) async {
+    if (await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    } else {
+      const snackBar = SnackBar(content: Text("閲覧することができません。"));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
   }
 }
