@@ -1,13 +1,14 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../data/model/user.dart';
+import '../../data/model/user_search_body.dart';
 import '../../data/repository/search_repository.dart';
 
 final userSearchViewModelProvider = StateNotifierProvider.autoDispose<
-        UserSearchViewModel, AsyncValue<List<User>>>(
+        UserSearchViewModel, AsyncValue<List<UserSearchBody>>>(
     (ref) => UserSearchViewModel(ref.read(searchRepositoryProvider)));
 
-class UserSearchViewModel extends StateNotifier<AsyncValue<List<User>>> {
+class UserSearchViewModel
+    extends StateNotifier<AsyncValue<List<UserSearchBody>>> {
   UserSearchViewModel(this._searchRepository)
       : super(const AsyncValue.data([]));
 
